@@ -5,6 +5,7 @@ import Input from '../components/Input';
 import Logo from '../components/Logo';
 import Button from '../components/Button';
 
+//This is user login
 
 export function Login() {
     const navigate=  useNavigate() ; 
@@ -12,36 +13,13 @@ export function Login() {
     const [error , setError] = useState("");
 
     const submit =async (data) => {
-         console.log(data);
-        // if(data.password.length < 8 ){
-        //     setError('Password should be of at least 8 characters')
-        //     return ;  
-        // }
-        // setError("") ; 
-        // try {
-        //     const session  =await authService.login(data) ;
-            
-        //     if(session){
-        //         const userData =  await authService.getCurrentUser();
-        //         //console.log("This is userdata before giving to store " ,userData);
-        //         if(userData)
-        //         dispatch(authLogin(userData)) 
-        //         navigate('/')
-        //     }
-        //     else{
-        //            setError("No such user found") ; 
-        //     }
-        // } catch (error) {
-        //     setError(error) ; 
-        // }
-        
-         
+      
     }
     
   return (
 
     <div className="flex flex-col items-center 
-        justify-center w-full">
+        justify-center w-full mt-5">
             <div className={`mx-auto w-full max-w-lg 
              rounded-xl p-10 border border-black/10 bg-amber-100 flex flex-col justify-center `}>
 
