@@ -4,6 +4,9 @@ import { useForm } from 'react-hook-form'
 import Input from '../components/Input';
 import Logo from '../components/Logo';
 import Button from '../components/Button';
+import { auth } from '../firebase'; 
+import firebase from 'firebase/compat/app'; 
+import 'firebase/compat/auth'; 
 
 //This is user signup
 export function Signup() {
@@ -17,8 +20,19 @@ export function Signup() {
         setError("Passwords do not match")
         return 
       }
-      else setError("")
-        // console.log(data);
+      try {
+        const userCredential = await auth.createUserWithEmailAndPassword(
+            data.email,
+            data.password
+        );
+
+        console.log('User created:', userCredential.user);
+        navigate('/');
+      } 
+      catch (error) {
+        setError(error.message);
+      }
+      alert("Account Created Succesfully!")
     }
     
   return (
